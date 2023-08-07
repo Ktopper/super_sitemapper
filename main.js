@@ -34,29 +34,23 @@ async function crawlPage(page, url, depth = 1, maxDepth = 2) {
   
     await page.goto(url, { waitUntil: 'networkidle2' });
   
-    // Extract all links from the current page
     const linksOnPage = await page.$$eval('a', as => as.map(a => a.href));
-  
-    // Filter out only the internal links
     const internalLinks = linksOnPage.filter(link => link.startsWith(url));
   
     let childLinks = [];
     for (const link of internalLinks) {
-      // This will prevent the crawler from visiting a link it has already visited
       if (!childLinks.includes(link)) {
         childLinks.push(...await crawlPage(page, link, depth + 1, maxDepth));
       }
     }
   
     return [...internalLinks, ...childLinks];
-  }
-  
+}
 
-ipcMain.on('generate-sitemap', async (event, url) => {
+ipcMain.on('generate-sitemap', async (event, sitemapData) => {
   try {
     const page = await browser.newPage();
-
-    const links = await crawlPage(page, url);
+    const links = await crawlPage(page, sitemapData.websiteUrl);
 
     await page.close();
     
@@ -66,3 +60,4 @@ ipcMain.on('generate-sitemap', async (event, url) => {
     event.reply('sitemap-response', null, error.toString());
   }
 });
+n
