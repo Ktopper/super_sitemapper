@@ -60,4 +60,3 @@ ipcMain.on('generate-sitemap', async (event, sitemapData) => {
     event.reply('sitemap-response', null, error.toString());
   }
 });
-n
