@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=Lato:wght@400;700&family=Murecho&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600&family=Raleway:wght@400;500&family=Red+Hat+Display:wght@400;600;700&family=Roboto+Mono:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Sora:wght@400;500;600;700&display=swap");
+:root {
+  text-align: center;
+  font-family: "Geologica", sans-serif;
+    background-color: black;
+  box-sizing: border-box;
+  font-family: "IBM Plex Serif", serif;
+  font-family: "Murecho", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Sora", sans-serif;
+
+  --text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7),
+    -2px -2px 10px rgba(0, 0, 0, 0.2), 2px 2px 10px rgba(0, 0, 0, 0.2);
+  --text-deep-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6),
+    -2px -2px 10px rgba(0, 0, 0, 0.7), 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+body {
+    background-image: url(./sitemapper_bkg1.png);
+    background-size: contain;
+    
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+button {
+    color:antiquewhite;
+  background-color: rgb(250, 74, 30);
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Red Hat Display", sans-serif;
+   box-shadow: var(--text-shadow);
+   font-size: 30px;
+}
+
+h1 {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.637);
+    border-radius: 30px;
+    text-align: start;
+    font-family: "Open Sans", sans-serif;
+  color: rgb(255, 42, 42);
+  text-shadow: var(--text-deep-shadow);
+}
+/*----- Grid ------*/
+
+.button-block {
+  background-color: rgba(223, 223, 223, 0.897);
+  border-radius: 20px;
+ text-align: start;
+  padding: 1rem;
+  width: 300px;
+  height: 400px;
+  box-shadow: var(--text-deep-shadow);
+  border: solid 3px rgb(39, 26, 11);
+  grid-area: button-block;
+    justify-self: start;
+}
+
+.result-block {
+    background-color: rgba(223, 223, 223, 0.897);
+  border-radius: 20px;
+justify-self:end;
+  margin: auto;
+ padding: 1rem;
+  width: 350px;
+  height: 400px;
+  box-shadow: var(--text-deep-shadow);
+  border: black;
+  grid-area: result-block; 
+}
+
+.container { 
+    justify-self: center;
+    background-position: center;
+    margin:auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   width: 95vw;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "button-block result-block";
+      overflow: hidden;
+  }
+  
+
+  

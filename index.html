@@ -2,9 +2,11 @@
 <html>
   <head>
     <title>Super SiteMapper</title>
+    <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
     <h1>Super SiteMapper</h1>
+    <div class="container">
     <div class="button-block">
       <input type="text" id="websiteUrl" placeholder="Enter website URL" />
       <br><br>
@@ -28,8 +30,10 @@
       <button id="generateBtn">Generate Sitemap</button>
     </div>
     <div class="result-block">
-      <textarea id="output" rows="20" cols="50"></textarea>
+        <h2>SiteMap</h2>
+      <textarea id="output" rows="20" cols="40"></textarea>
     </div>
+</div>
     <script src="renderer.js"></script>
   </body>
 </html>
